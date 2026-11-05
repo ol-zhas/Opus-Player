@@ -48,7 +48,7 @@
         }
 
         .container {
-            max-width: 840px;
+            max-width: 860px;
             margin: 0 auto;
         }
 
@@ -165,18 +165,29 @@
             width: 100%;
             border-collapse: collapse;
             margin: 16px 0;
-            font-size: 0.95rem;
+            font-size: 0.92rem;
         }
 
         th, td {
-            padding: 12px;
+            padding: 12px 14px;
             text-align: left;
             border-bottom: 1px solid var(--border);
+            vertical-align: top;
         }
 
         th {
             color: var(--text-main);
             background-color: var(--bg-page);
+            font-weight: 600;
+        }
+
+        code {
+            background-color: var(--badge-bg);
+            color: var(--badge-text);
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-size: 0.88em;
+            font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
         }
     </style>
 </head>
@@ -192,38 +203,41 @@
                 <strong>Effective Date:</strong> November 5, 2026
             </p>
             <div class="highlight-box">
-                <strong>Our Core Privacy Commitment:</strong> Opus Player processes your voice notes and speech-to-text transcriptions <strong>100% locally on your device</strong>. We do NOT collect, upload, store, or transmit your voice notes, transcripts, or personal messages to any cloud servers.
+                <strong>Our Core Privacy Commitment:</strong> Opus Player processes all your voice notes, transcripts, and media files (photos, videos, audio) <strong>100% locally on your device</strong>. We do NOT collect, upload, store, or transmit your voice notes, personal photos, videos, or message transcripts to any cloud servers.
             </div>
         </header>
 
         <main class="content-card">
             <h2>1. Introduction</h2>
             <p>
-                Nomad Apps ("we", "us", or "our") develops <strong>Opus Player</strong> (also published as <strong>OpusPlayer: WA Audio to Text AI</strong>, package name: <code>com.opusplayer.audio.olzhas</code>). This Privacy Policy informs you of our practices regarding the collection, use, and disclosure of information when you use our mobile application.
+                Nomad Apps ("we", "us", or "our") develops <strong>Opus Player</strong> (also distributed as <strong>OpusPlayer: WA Audio to Text AI</strong>, package name: <code>com.opusplayer.audio.olzhas</code>). This Privacy Policy explains our practices regarding the collection, use, and disclosure of information when you use our mobile application.
             </p>
             <p>
                 By using Opus Player, you agree to the collection and use of information in accordance with this policy.
             </p>
 
-            <h2>2. On-Device Voice Notes &amp; Speech-to-Text Processing</h2>
+            <h2>2. On-Device Voice Notes, Media Browser &amp; Speech-to-Text Processing</h2>
             <p>
-                Opus Player is engineered with a strict privacy-first architecture:
+                Opus Player is built around strict on-device, privacy-first principles:
             </p>
             <ul>
                 <li>
-                    <strong>Audio Files Access:</strong> The app accesses voice note files (such as <code>.opus</code>, <code>.m4a</code>, <code>.ogg</code>) selected by you via the Android Storage Access Framework (SAF). These files remain entirely on your device and are never uploaded to any remote server.
+                    <strong>Voice Notes Access:</strong> The app accesses audio files (such as <code>.opus</code>, <code>.m4a</code>, <code>.ogg</code>) selected by you via the Android Storage Access Framework (SAF) or device media storage. These audio recordings remain exclusively on your device and are never uploaded to any remote server.
                 </li>
                 <li>
-                    <strong>100% Offline AI Transcription:</strong> When you transcribe a voice note, speech recognition is executed directly on your smartphone's hardware using an embedded on-device engine (Sherpa-ONNX). <strong>Your audio recordings and generated transcripts never leave your device and are never sent across the Internet.</strong>
+                    <strong>Local Media Browser (Photos &amp; Videos):</strong> Opus Player provides a built-in Media Browser feature that allows you to browse, preview, and play multimedia files (images, photos, and video recordings) related to WhatsApp media on your device. <strong>All photo and video access is strictly local and read-only.</strong> We never collect, analyze, modify, or transmit your personal photos, images, or videos to external servers or third parties.
                 </li>
                 <li>
-                    <strong>Converted Audio &amp; Custom Notes:</strong> When converting voice notes to M4A, adding custom titles, tags, or personal notes, all data is saved locally in the app's sandboxed storage on your device.
+                    <strong>100% Offline AI Speech-to-Text Transcription:</strong> When you transcribe a voice message, speech recognition is executed directly on your phone's processor using the embedded Sherpa-ONNX offline AI engine. <strong>Your voice data and generated transcripts never leave your device and are never sent over the Internet.</strong>
+                </li>
+                <li>
+                    <strong>Converted Audio &amp; Custom Notes:</strong> When converting voice notes to M4A, creating custom titles, adding personal text notes, or assigning categories, all data is saved locally within the app's isolated private database on your device.
                 </li>
             </ul>
 
             <h2>3. Third-Party Services &amp; Data Collection</h2>
             <p>
-                To provide free access, ensure software stability, and handle premium subscriptions, Opus Player integrates verified third-party SDKs that collect technical, pseudonymized data:
+                To support free functionality, monitor stability, and manage premium subscriptions, Opus Player integrates verified third-party SDKs that collect technical, pseudonymized data:
             </p>
 
             <h3>A. Google AdMob (Google LLC)</h3>
@@ -260,7 +274,7 @@
                 If you purchase Opus Player Pro, payments and recurring subscriptions are handled securely through <strong>Google Play In-App Billing</strong> and managed via <strong>RevenueCat (RevenueCat, Inc.)</strong>.
             </p>
             <ul>
-                <li>We do not collect, view, or store your credit card or financial information. All billing transactions are managed directly by Google.</li>
+                <li>We do not collect, view, or store your credit card or financial billing information. All transactions are securely processed directly by Google Play.</li>
                 <li>RevenueCat securely verifies purchase receipts and manages your Pro entitlements using anonymous, pseudonymous app user IDs.</li>
             </ul>
             <p>
@@ -268,34 +282,72 @@
             </p>
 
             <h2>4. Android Permissions Used</h2>
-            <p>Opus Player requests only permissions necessary for core functionality:</p>
+            <p>
+                In compliance with Google Play's User Data and Media Permissions policies, the following table details every sensitive permission requested by Opus Player and its exact purpose:
+            </p>
             <table>
                 <thead>
                     <tr>
                         <th>Permission</th>
-                        <th>Purpose</th>
+                        <th>API Level</th>
+                        <th>Exact Purpose</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
-                        <td><strong>Storage / SAF (Folder Access)</strong></td>
-                        <td>Allows you to choose WhatsApp or custom folders to scan and play voice notes locally.</td>
+                        <td><code>READ_MEDIA_AUDIO</code></td>
+                        <td>Android 13+ (API 33+)</td>
+                        <td>Allows the app to discover, scan, and play voice notes and audio recordings from device storage.</td>
                     </tr>
                     <tr>
-                        <td><strong>POST_NOTIFICATIONS</strong></td>
-                        <td>Required on Android 13+ to display media playback controls (play/pause/seek) in the notification bar.</td>
+                        <td><code>READ_MEDIA_IMAGES</code><br><code>READ_MEDIA_VIDEO</code></td>
+                        <td>Android 13+ (API 33+)</td>
+                        <td>Allows the built-in Media Browser to display and preview WhatsApp photos and videos locally on your device upon user request.</td>
                     </tr>
                     <tr>
-                        <td><strong>FOREGROUND_SERVICE (Media Playback)</strong></td>
-                        <td>Ensures smooth, continuous audio playback when the app is minimized or the screen is turned off.</td>
+                        <td><code>READ_MEDIA_VISUAL_USER_SELECTED</code></td>
+                        <td>Android 14+ (API 34+)</td>
+                        <td>Supports partial, user-selected access to specific photos and videos within the Media Browser.</td>
                     </tr>
                     <tr>
-                        <td><strong>INTERNET &amp; ACCESS_NETWORK_STATE</strong></td>
-                        <td>Required for loading ads (AdMob), reporting crash logs (Crashlytics), and verifying Pro subscriptions via RevenueCat / Google Play.</td>
+                        <td><code>READ_EXTERNAL_STORAGE</code></td>
+                        <td>Android 12 and below (API &le; 32)</td>
+                        <td>Legacy permission required on older Android versions to read voice notes and media files.</td>
                     </tr>
                     <tr>
-                        <td><strong>REQUEST_IGNORE_BATTERY_OPTIMIZATIONS (Optional)</strong></td>
-                        <td>Ensures audio playback is not unexpectedly killed by system battery optimization features.</td>
+                        <td><strong>Storage Access Framework (SAF)</strong></td>
+                        <td>All Android versions</td>
+                        <td>Allows users to pick specific folders (e.g. WhatsApp Voice Notes or custom directories) for playback.</td>
+                    </tr>
+                    <tr>
+                        <td><code>POST_NOTIFICATIONS</code></td>
+                        <td>Android 13+ (API 33+)</td>
+                        <td>Required to show playback controls (play, pause, seek, forward) in the system notification shade.</td>
+                    </tr>
+                    <tr>
+                        <td><code>FOREGROUND_SERVICE</code><br><code>FOREGROUND_SERVICE_MEDIA_PLAYBACK</code></td>
+                        <td>Android 9+ / Android 14+</td>
+                        <td>Ensures smooth, continuous audio playback when the app is in the background or when the screen is locked.</td>
+                    </tr>
+                    <tr>
+                        <td><code>WAKE_LOCK</code></td>
+                        <td>All Android versions</td>
+                        <td>Prevents the audio decoder from pausing when the device screen turns off during playback.</td>
+                    </tr>
+                    <tr>
+                        <td><code>INTERNET</code> &amp;<br><code>ACCESS_NETWORK_STATE</code></td>
+                        <td>All Android versions</td>
+                        <td>Used strictly for loading AdMob ads, sending crash reports to Firebase, and verifying Pro purchases.</td>
+                    </tr>
+                    <tr>
+                        <td><code>VIBRATE</code></td>
+                        <td>All Android versions</td>
+                        <td>Provides subtle haptic feedback for user actions and button taps.</td>
+                    </tr>
+                    <tr>
+                        <td><code>REQUEST_IGNORE_BATTERY_OPTIMIZATIONS</code></td>
+                        <td>All Android versions (Optional)</td>
+                        <td>Optional permission to prevent system battery savers from prematurely stopping background playback.</td>
                     </tr>
                 </tbody>
             </table>
@@ -316,7 +368,7 @@
 
             <h2>7. Security of Your Data</h2>
             <p>
-                The security of your personal voice recordings is our highest priority. Your audio files and transcripts are never transmitted over the Internet. All network communications with third-party SDKs (ads, crash analytics, subscription validation) are protected using industry-standard TLS/HTTPS encryption.
+                The security of your personal voice recordings, photos, and videos is our highest priority. Your media files and transcripts are never transmitted over the Internet. All network communications with third-party SDKs (ads, crash analytics, subscription validation) are protected using industry-standard TLS/HTTPS encryption.
             </p>
 
             <h2>8. Changes to This Privacy Policy</h2>
